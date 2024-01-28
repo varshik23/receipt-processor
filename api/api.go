@@ -5,9 +5,10 @@ import (
 	"github.com/varshik23/receipt-processor/handlers"
 )
 
-func SetupRoutes(router *gin.Engine)  {
+func SetupRoutes(router *gin.Engine) {
 	router.GET("/receipt", handlers.GetReceipts)
 	router.GET("/receipt/:id/points", handlers.GetReceiptById)
 	router.POST("/receipt", handlers.PostReceipt)
+	router.PUT("/receipt/:id", handlers.UpdateReceipt)
 	router.DELETE("/receipt/:id", handlers.DeleteReceipt)
 }
